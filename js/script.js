@@ -1,8 +1,8 @@
-function playGame(){
+function playGame(playerInput){
+  console.log(playerInput);
 
   clearMessages();
 
-  let playerInput = 3;
   function getMoveName(argMoveId){
     if(argMoveId == 1){
       return 'slap';
@@ -57,18 +57,15 @@ function playGame(){
   printMessage('You would love to ' + playerMove + ' your pc');
 
   displayResult(playerMove, computerMove);
-
+}
   document.getElementById('use-slap').addEventListener('click', function(){
-    printMessage('Slapped it');
+    playGame(1);
   });
 
   document.getElementById('use-punch').addEventListener('click', function(){
-  printMessage('You punched pc');
+  playGame(2);
   });
 
   document.getElementById('use-bat').addEventListener('click', function(){
-  printMessage('You fixed pc with a bat');
+  playGame(3);
   });
-
-
-}
