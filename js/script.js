@@ -1,9 +1,12 @@
-function playGame(playerInput){
+{
+  const playGame = function(playerInput){
   console.log(playerInput);
+
 
   clearMessages();
 
-  function getMoveName(argMoveId){
+
+  const getMoveName = function(argMoveId){
     if(argMoveId == 1){
       return 'slap';
     }
@@ -19,7 +22,8 @@ function playGame(playerInput){
     }
   }
 
-  function displayResult(argComputerMove, argPlayerMove){
+
+  const displayResult = function(argComputerMove, argPlayerMove){
     printMessage('My move is ' + argComputerMove + ' , your move is ' + argPlayerMove);
     console.log('moves:', argComputerMove, argPlayerMove);
 
@@ -40,24 +44,28 @@ function playGame(playerInput){
     }
   }
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log('Random digit is: ' + randomNumber);
 
-  let computerMove = getMoveName(randomNumber);
+
+  const computerMove = getMoveName(randomNumber);
 
   printMessage('My move is: ' + computerMove);
-  /*
-  let playerInput = prompt('Choose your move! 1: Give a slap to pc, 2: Punch pc, 3: Fix this fkr with a baseball bat');
-  */
+
+
   console.log('You would love to : ' + playerInput);
 
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
 
   printMessage('You would love to ' + playerMove + ' your pc');
 
+
   displayResult(playerMove, computerMove);
 }
+
+
   document.getElementById('use-slap').addEventListener('click', function(){
     playGame(1);
   });
@@ -69,3 +77,4 @@ function playGame(playerInput){
   document.getElementById('use-bat').addEventListener('click', function(){
   playGame(3);
   });
+}
